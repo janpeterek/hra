@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <style>
+        body {
+            background-image: url("img/kasino2.jpg");
+            height: 757px;
+            background-position: center;  
+            background-repeat: no-repeat;
+            background-size: cover; 
+            position: relative;
+}
+    .button {
+            background-color: rgb(0, 0, 0); 
+            border: none;  
+            color: white;
+            padding: 5px 7px;  
+            text-align: center; 
+            text-decoration: none;
+            display: inline-block; 
+            font-size: 15px;
+            margin: 2px 2px;
+            cursor: pointer;
+  }
+    .footer {
+        position: fixed;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        bottom: 0;
+        width: 100%;
+        color: rgb(0, 0, 0);
+        text-align: center;
+}
+    </style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kostka</title>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <h1>KOSTKA</h1>
+        <div class="container">
+            <figure>
+                <img id="cube" src="img/kostka6.png" alt="Kostka">
+            </figure>
+            <div id="result"></div>
+            <button id="game" class="button">Hraj</button>
+            <script>
+                const fotka = document.getElementById('cube')
+                let fotky = ['kostka1.png', 'kostka2.png', 'kostka3.png', 'kostka4.png', 'kostka5.png', 'kostka6.png'];
+                function zmenFotku() {
+                    fotka.src = `img/${fotky[Math.floor(Math.random() * fotky.length)]}`;
+                }
+                setInterval(zmenFotku, 250)
+                </script>
+            <div class="footer">
+                <audio controls autoplay loop>
+                    <source src="img/casino.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <p><b>Soundtrack</b></p>
+                <p>&copy; 2021 - IT1 - Jan Peterek</p>
+              </div>           
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/game.js"></script>
+    </body>
+</html>
